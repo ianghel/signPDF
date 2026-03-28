@@ -11,14 +11,16 @@ function createWindow() {
     minWidth: 900,
     minHeight: 600,
     title: 'tenSignPDF',
-    icon: path.join(__dirname, '../build/icon.png'),
+    icon: path.join(__dirname, process.platform === 'win32' ? '../build/icon.ico' : '../public/icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
     },
-    titleBarStyle: 'hiddenInset',
-    trafficLightPosition: { x: 15, y: 15 },
+    ...(process.platform === 'darwin' ? {
+      titleBarStyle: 'hiddenInset',
+      trafficLightPosition: { x: 15, y: 15 },
+    } : {}),
   })
 
   if (process.env.VITE_DEV_SERVER_URL) {
