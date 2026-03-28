@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "signpdf-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 5173
+    },
+    {
+      "name": "signpdf-electron",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:electron"],
+      "port": 5173
+    }
+  ]
+}

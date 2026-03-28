@@ -1,0 +1,91 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="bulbGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="pdfGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="50%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#FBBF24"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#F472B6" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="100" fill="url(#bg)"/>
+
+  <!-- Subtle radial glow behind bulb -->
+  <circle cx="256" cy="290" r="120" fill="#3B82F6" opacity="0.06" filter="url(#softGlow)"/>
+
+  <!-- PDF text - large, bold, top -->
+  <text x="256" y="145" text-anchor="middle" font-family="SF Pro Display, -apple-system, Helvetica Neue, Arial, sans-serif" font-size="120" font-weight="900" fill="url(#pdfGrad)" filter="url(#textShadow)" letter-spacing="8">PDF</text>
+
+  <!-- Lightbulb - scaled and centered lower -->
+  <g transform="translate(256, 310) scale(0.6)">
+    <!-- Bulb body -->
+    <path d="M0 -80 C-45 -80 -80 -47 -80 -6 C-80 22 -62 46 -44 64 C-38 70 -34 82 -34 94 L34 94 C34 82 38 70 44 64 C62 46 80 22 80 -6 C80 -47 45 -80 0 -80Z" fill="url(#bulbGlow)" opacity="0.9"/>
+
+    <!-- Highlight -->
+    <path d="M0 -67 C-35 -67 -60 -42 -60 -6 C-60 16 -48 34 -33 50" stroke="white" stroke-width="2.5" stroke-opacity="0.3" stroke-linecap="round" fill="none"/>
+
+    <!-- Screw base -->
+    <rect x="-30" y="94" width="60" height="7" rx="3" fill="#60A5FA" opacity="0.7"/>
+    <rect x="-25" y="103" width="50" height="6" rx="3" fill="#60A5FA" opacity="0.5"/>
+    <rect x="-20" y="111" width="40" height="6" rx="3" fill="#60A5FA" opacity="0.3"/>
+    <path d="M-10 117 L10 117 L0 128 Z" fill="#60A5FA" opacity="0.3"/>
+
+    <!-- Filament person -->
+    <circle cx="0" cy="-35" r="11" stroke="#FCD34D" stroke-width="2.5" fill="none" filter="url(#glow)"/>
+    <path d="M0 -24 L0 35" stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <!-- Arms -->
+    <path d="M0 -2 L-30 -32" stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <path d="M0 -2 L30 -32" stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <!-- Rock fingers left -->
+    <path d="M-30 -32 L-38 -47" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <path d="M-30 -32 L-22 -46" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <!-- Rock fingers right -->
+    <path d="M30 -32 L22 -47" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <path d="M30 -32 L38 -47" stroke="#FCD34D" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <!-- Legs -->
+    <path d="M0 35 L-20 65" stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+    <path d="M0 35 L20 65" stroke="#FCD34D" stroke-width="2.5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+  </g>
+
+  <!-- Sparkles -->
+  <circle cx="120" cy="250" r="3" fill="white" opacity="0.7"/>
+  <path d="M120 240 L120 260 M110 250 L130 250" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+
+  <circle cx="400" cy="230" r="2.5" fill="#FCD34D" opacity="0.7"/>
+  <path d="M400 222 L400 238 M392 230 L408 230" stroke="#FCD34D" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Orbit ring -->
+  <ellipse cx="256" cy="310" rx="115" ry="30" fill="none" stroke="url(#blueGrad)" stroke-width="2" stroke-opacity="0.35" stroke-dasharray="8 6"/>
+  <circle cx="370" cy="307" r="4" fill="#3B82F6" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- Floating dots -->
+  <circle cx="140" cy="200" r="2.5" fill="#60A5FA" opacity="0.5"/>
+  <circle cx="385" cy="185" r="2" fill="#FCD34D" opacity="0.5"/>
+  <circle cx="100" cy="350" r="2" fill="#60A5FA" opacity="0.4"/>
+  <circle cx="420" cy="370" r="2.5" fill="#FCD34D" opacity="0.4"/>
+</svg>
